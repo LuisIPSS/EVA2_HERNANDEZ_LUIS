@@ -50,13 +50,13 @@ class ClientsController extends Controller
 
             return response()->json(['success' => true, 'message' => 'Cliente creado exitosamente', 'data' => $client], 200);
 
-        } catch (\Illuminate\Validation\ValidationException $ve) {
-            return response()->json(['success' => false, 'message' => 'Error de validación', 'errors' => $ve->errors()], 422);
-
         } catch (QueryException $e) {
             if ($e->getCode() === 23000) {
                 return response()->json(['success' => false, 'message' => 'El RUT o el correo electrónico ya existe'], 409);
             }
+
+        } catch (\Illuminate\Validation\ValidationException $ve) {
+            return response()->json(['success' => false, 'message' => 'Error de validación', 'errors' => $ve->errors()], 422);
 
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => 'Error interno del servidor', 'error' => $e->getMessage()], 500);
@@ -115,6 +115,7 @@ class ClientsController extends Controller
 
         } catch (\Illuminate\Validation\ValidationException $ve) {
             return response()->json(['success' => false, 'message' => 'Error de validación', 'errors' => $ve->errors()], 422);
+
 
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => 'Error interno del servidor', 'error' => $e->getMessage()], 500);
