@@ -11,7 +11,7 @@ Utilizando las herramientas de tu Stack Técnico (DBeaver/TablePlus y Laravel Mi
 ### Fase B: Desarrollo del Servicio (Laravel API)
 1. Modelo:
     Crear el modelo Cliente con sus propiedades fillable.
-2. Controlador:
+2. Controlador: 
     Crear un ClienteController (tipo --resource o manual).
 3. Endpoints Requeridos:
    1. GET /api/v1/clientes
