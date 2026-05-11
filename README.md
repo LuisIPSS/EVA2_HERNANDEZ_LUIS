@@ -62,7 +62,6 @@ class Client extends Model
         'email',
         'phone_number',
     ];
-
 }
 ```
 
@@ -99,5 +98,4 @@ En este caso, se creo un usuario con email carlos.gonzalez@example.cl anteriorme
 
 ![alt text](imgs/image.png)
 
-#### INTEGRANTES: Luis Hernandez - 
-
+#### INTEGRANTES: Luis Hernandez
